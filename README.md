@@ -34,7 +34,7 @@ import {
 /**
  * @description The type parameter `T` in `Proxy<T>` should represent the message options specific to the implementation.
  * */
-export abstract class YourCore extends Proxy<unknown> {
+export class YourCore extends Proxy<unknown> {
   public constructor() {
     super(30000);
   }
