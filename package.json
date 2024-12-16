@@ -1,6 +1,6 @@
 {
   "name": "cross-proxy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An isolated core abstraction layer for integrating various messaging systems such as Kafka, RabbitMQ, etc., enabling seamless communication and interchangeability based on the @nestjs/microservices.",
   "main": "dist/index.js",
   "type": "commonjs",
