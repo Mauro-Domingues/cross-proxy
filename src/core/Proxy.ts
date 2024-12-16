@@ -16,7 +16,7 @@ import { IWritePacketDTO } from '@interfaces/IWritePacketDTO';
 import { isType } from '@utils/isType';
 
 export abstract class Proxy<MessageOptions> implements IModel {
-  protected declare readonly observerTimeout: number;
+  public constructor(private readonly observerTimeout: number = 30000) {}
   protected readonly routingMap = new Map<
     string,
     (packet: IWritePacketDTO<unknown>) => void
@@ -57,7 +57,7 @@ export abstract class Proxy<MessageOptions> implements IModel {
                 });
               }),
           ),
-          timeout(this.observerTimeout ?? 30000),
+          timeout(this.observerTimeout),
           catchError((error: Error) => {
             reject(error);
             return EMPTY;
